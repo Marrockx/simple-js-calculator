@@ -18,6 +18,11 @@ body {
 	height: 80px;
 	color: #ffffff;
 	font-family: monospace;
+	font-size: 30px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	padding-right: 10px;
 }
 
 .calculator-inner-wrap {
@@ -47,7 +52,7 @@ body {
 .btn {
 	border: none;
 	background-color: #d8d9db;
-	flex-basis: 24.3%;
+	flex-basis: 24.5%;
 	font-size: 30px;
 	/* border: 1px solid #000000; */
 
@@ -67,7 +72,7 @@ body {
 }
 
 .btn.clear {
-	flex-basis: 49.9%;
+	flex-basis: 49.8%;
 }
 
 .btn.digit-zero {
@@ -76,8 +81,4 @@ body {
 
 .row:nth-child(odd) {
 	margin-bottom: -1px;
-}
-
-.row:last-child {
-	margin-bottom: -2px;
 }
