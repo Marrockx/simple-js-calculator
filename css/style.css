@@ -34,11 +34,6 @@ body {
 	/* gap: 2px; */
 	justify-content: space-between;
 }
-
-.row-2 {
-	/* gap: 0; */
-}
-
 .row {
 	display: flex;
 	flex-direction: row;
@@ -65,6 +60,7 @@ body {
 
 .btn-last-col {
 	background-color: #df974c;
+	color: #ffffff;
 }
 
 .btn-last-col:hover {
@@ -81,4 +77,8 @@ body {
 
 .row:nth-child(odd) {
 	margin-bottom: -1px;
+}
+
+.row:last-child {
+	margin-bottom: -2px;
 }
