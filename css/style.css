@@ -43,15 +43,16 @@ body {
 	justify-content: space-between;
 	/* gap: 2px; */
 }
+
 .btn {
 	border: none;
 	background-color: #d8d9db;
-	flex-basis: 24.5%;
+	flex-basis: 24.3%;
 	font-size: 30px;
-	margin-bottom: 0.5%;
 	/* border: 1px solid #000000; */
 
-	/* align-self: stretch; */
+	align-self: stretch;
+	margin-bottom: 2px;
 }
 .btn:hover {
 	background-color: #ebebeb;
@@ -59,7 +60,6 @@ body {
 
 .btn-last-col {
 	background-color: #df974c;
-	color: #ffffff;
 }
 
 .btn-last-col:hover {
@@ -71,14 +71,10 @@ body {
 }
 
 .btn.digit-zero {
-	flex-basis: 74.9%;
+	flex-basis: 74.8%;
 }
 
-.row:first-child {
-	margin-bottom: -1px;
-}
-
-.row:nth-child(3) {
+.row:nth-child(odd) {
 	margin-bottom: -1px;
 }
 
