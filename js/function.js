@@ -63,6 +63,7 @@ btn.addEventListener('click', function (evt) {
             console.log('operator key!')
             calculator.dataset.firstValue = displayedNum
             calculator.dataset.operator = action
+            calcDisplay.textContent = 0;
 
         }
 
@@ -71,11 +72,12 @@ btn.addEventListener('click', function (evt) {
 
         if (action === 'calculate') {
             // console.log('equal key!')
+            calculator.dataset.previousKeyType = 'calculate'
             const firstValue = calculator.dataset.firstValue
             const operator = calculator.dataset.operator
             const secondValue = displayedNum
 
-            display.textContent = calculate(firstValue, operator, secondValue)
+            calcDisplay.textContent = calculate(firstValue, operator, secondValue)
         }
 
 
