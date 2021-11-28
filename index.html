@@ -12,31 +12,37 @@
 			<div class="calculator-result-screen" id="display"></div>
 			<div class="calculator-inner-wrap">
 				<div class="row row-2">
-					<button class="btn clear">&#67;</button>
-					<button class="btn">&larr;</button>
-					<button class="btn btn-last-col divide">&divide;</button>
+					<button class="btn clear" data-clear>&#67;</button>
+					<button class="btn" data-delete>&larr;</button>
+					<button class="btn btn-last-col divide" data-action="divide">
+						&divide;
+					</button>
 				</div>
 				<div class="row">
-					<button class="btn">&#55;</button>
-					<button class="btn">&#56;</button>
-					<button class="btn">&#57;</button>
-					<button class="btn btn-last-col">&times;</button>
+					<button class="btn digit" data-digit="7">&#55;</button>
+					<button class="btn digit" data-digit="8">&#56;</button>
+					<button class="btn digit" data-digit="9">&#57;</button>
+					<button class="btn btn-last-col" data-action="multiply">
+						&times;
+					</button>
 				</div>
 				<div class="row">
-					<button class="btn">&#52;</button>
-					<button class="btn">&#53;</button>
-					<button class="btn">&#54;</button>
-					<button class="btn btn-last-col">&minus;</button>
+					<button class="btn digit" data-digit="4">&#52;</button>
+					<button class="btn digit" data-digit="5">&#53;</button>
+					<button class="btn digit" data-digit="6">&#54;</button>
+					<button class="btn btn-last-col" data-action="subtract">
+						&minus;
+					</button>
 				</div>
 				<div class="row">
-					<button class="btn">&#49;</button>
-					<button class="btn">&#50;</button>
-					<button class="btn">&#51;</button>
-					<button class="btn btn-last-col">&plus;</button>
+					<button class="btn digit" data-digit="1">&#49;</button>
+					<button class="btn digit" data-digit="2">&#50;</button>
+					<button class="btn digit" data-digit="3">&#51;</button>
+					<button class="btn btn-last-col" data-action="add">&plus;</button>
 				</div>
 				<div class="row">
-					<button class="btn digit-zero">&#48;</button>
-					<button class="btn btn-last-col">&equals;</button>
+					<button class="btn digit digit-zero" data-digit>&#48;</button>
+					<button class="btn btn-last-col" data-calculate>&equals;</button>
 				</div>
 			</div>
 		</div>
