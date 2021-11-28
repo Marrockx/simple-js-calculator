@@ -75,7 +75,7 @@ body {
 	flex-basis: 74.8%;
 }
 
-.row:nth-child(odd) {
+.row:nth-child(even) {
 	margin-bottom: -1px;
 }
 
