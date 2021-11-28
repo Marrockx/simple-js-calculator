@@ -16,6 +16,7 @@ btn.addEventListener('click', function (evt) {
     // alert(`clicked ${event.target.innerText}`)
 
 
+    const previousKeyType = calculator.dataset.previousKeyType
 
     if (evt.target.matches('button')) {
         const key = evt.target;
@@ -23,29 +24,40 @@ btn.addEventListener('click', function (evt) {
         const keyValue = key.textContent;
 
         const action = key.dataset.action;
+        const displayedNum = calcDisplay.textContent;
 
-        if (!action) {
-            const displayedNum = calcDisplay.textContent;
+
+        if (num) {
 
 
             calcDisplay.textContent = keyValue;
+
+            calculator.dataset.previousKeyType = 'number'
+
+            if (displayedNum === '0' || previousKeyType === 'operator') {
+                calcDisplay.textContent = keyValue;
+            }
+            else {
+                calcDisplay.textContent = displayedNum + keyValue;
+            }
+
+            calculator.dataset.previousKeyType = 'number'
         }
         //     const keyValue = key.textContent;
         //     // calcDisplay.innerHTML = displayedNum;
         //     console.log(calcDisplay)
         //     // evt.target.innerText = add();
 
-        //     const previousKeyType = calculator.dataset.previousKeyType
 
 
 
 
         //     } else 
         if (
-            action === 'addition' ||
-            action === 'subtraction' ||
-            action === 'multiplication' ||
-            action === 'division'
+            action === 'add' ||
+            action === 'subtract' ||
+            action === 'multiply' ||
+            action === 'divide'
         ) {
             calculator.dataset.previousKeyType = 'operator'
             console.log('operator key!')
@@ -58,12 +70,12 @@ btn.addEventListener('click', function (evt) {
 
 
         if (action === 'calculate') {
-            console.log('equal key!')
+            // console.log('equal key!')
             const firstValue = calculator.dataset.firstValue
             const operator = calculator.dataset.operator
             const secondValue = displayedNum
 
-            display.textContent = add(firstValue, operator, secondValue)
+            display.textContent = calculate(firstValue, operator, secondValue)
         }
 
 
@@ -73,3 +85,42 @@ btn.addEventListener('click', function (evt) {
 })
 
 
+
+calcClearButton.addEventListener('click', () => {
+    // console.log('clear key')
+    calcDisplay.textContent = 0;
+    calculator.dataset.previousKeyType = 'clear'
+})
+
+
+
+calcDelButton.addEventListener('click', () => {
+    // console.log('delete')
+    calcDisplay.textContent = calcDisplay.textContent.toString().slice(0, -1);
+    if (!calcDisplay.textContent) {
+        calcDisplay.textContent = 0;
+    }
+
+    calculator.dataset.previousKeyType = 'delete'
+
+
+})
+
+
+const calculate = (n1, operator, n2) => {
+    if (operator === 'add') {
+        return parseInt(n1) + parseInt(n2)
+    }
+
+    if (operator === 'subtract') {
+        return parseInt(n1) - parseInt(n2)
+    }
+
+    if (operator === 'multiply') {
+        return parseFloat(n1) * parseInt(n2)
+    }
+
+    if (operator === 'divide') {
+        return parseInt(n1) / parseInt(n2)
+    }
+}
