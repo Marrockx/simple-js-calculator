@@ -1,20 +1,12 @@
 const calculator = document.querySelector('.calculator-wrap')
-const btn = document.querySelector('.calculator-inner-wrap');
+const button = document.querySelector('.calculator-inner-wrap');
 
 const calcDelButton = document.querySelector('[data-delete]')
 const calcClearButton = document.querySelector('[data-clear]')
 const calcDisplay = document.querySelector('.calculator-result-screen')
-// let displayedNum = 0;
+
 calcDisplay.innerText = 0;
-// const button = document.getElementsByTagName('button');
-
-
-btn.addEventListener('click', function (evt) {
-
-
-
-    // alert(`clicked ${event.target.innerText}`)
-
+button.addEventListener('click', function (evt) {
 
     const previousKeyType = calculator.dataset.previousKeyType
 
@@ -43,16 +35,8 @@ btn.addEventListener('click', function (evt) {
 
             calculator.dataset.previousKeyType = 'number'
         }
-        //     const keyValue = key.textContent;
-        //     // calcDisplay.innerHTML = displayedNum;
-        //     console.log(calcDisplay)
-        //     // evt.target.innerText = add();
 
 
-
-
-
-        //     } else 
         if (
             action === 'add' ||
             action === 'subtract' ||
@@ -80,8 +64,6 @@ btn.addEventListener('click', function (evt) {
             calcDisplay.textContent = calculate(firstValue, operator, secondValue)
         }
 
-
-        // 
     }
 
 })
@@ -110,19 +92,17 @@ calcDelButton.addEventListener('click', () => {
 
 
 const calculate = (n1, operator, n2) => {
-    if (operator === 'add') {
-        return parseInt(n1) + parseInt(n2)
-    }
+    switch (operator) {
+        case 'add':
+            return parseInt(n1) + parseInt(n2)
 
-    if (operator === 'subtract') {
-        return parseInt(n1) - parseInt(n2)
-    }
+        case 'subtract':
+            return parseInt(n1) - parseInt(n2)
 
-    if (operator === 'multiply') {
-        return parseFloat(n1) * parseInt(n2)
-    }
+        case 'multiply':
+            return parseFloat(n1) * parseInt(n2)
 
-    if (operator === 'divide') {
-        return parseInt(n1) / parseInt(n2)
+        case 'divide':
+            return parseInt(n1) / parseInt(n2)
     }
 }
