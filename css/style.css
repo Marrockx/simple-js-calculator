@@ -26,6 +26,7 @@ body {
 	align-items: center;
 	justify-content: flex-end;
 	padding-right: 10px;
+	cursor: none;
 }
 
 .calculator-inner-wrap {
@@ -50,8 +51,7 @@ body {
 	background-color: #d8d9db;
 	flex-basis: 24.5%;
 	font-size: 30px;
-	/* border: 1px solid #000000; */
-
+	cursor: pointer;
 	align-self: stretch;
 	margin-bottom: 2px;
 }
@@ -86,6 +86,7 @@ body {
 
 .footer {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	height: 4.8rem;
@@ -96,4 +97,26 @@ body {
 	text-align: center;
 	background-color: #000000;
 	opacity: 0.9;
+}
+
+span.text-1 {
+	padding-bottom: 0.64rem;
+}
+
+span.text-2 {
+	font-size: 0.9rem;
+	font-weight: 400;
+}
+
+.small-text {
+	font-size: 0.8rem;
+	font-weight: 300;
+	color: #998b64;
+	text-decoration: none;
+}
+
+.small-text:hover {
+	text-decoration: underline;
+	cursor: pointer;
+	font-weight: 500;
 }

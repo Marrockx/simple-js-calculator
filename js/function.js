@@ -104,3 +104,19 @@ const calculate = (n1, operator, n2) => {
             return parseInt(n1) / parseInt(n2)
     }
 }
+
+function setAttributes(el, attrs) {
+    for (var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+    }
+}
+
+const githubLink = document.querySelector('.small-text');
+setAttributes(githubLink, {
+    "href": "https://github.com/Marrockx/simple-js-calculator",
+    "target": "_blank"
+})
+
+// githubLink.addEventListener('click', () => {
+//     githubLink.style
+// })
