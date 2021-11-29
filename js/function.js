@@ -47,7 +47,7 @@ button.addEventListener('click', function (evt) {
             console.log('operator key!')
             calculator.dataset.firstValue = displayedNum
             calculator.dataset.operator = action
-            calcDisplay.textContent = 0;
+            // calcDisplay.textContent = 0;
 
         }
 
@@ -81,9 +81,9 @@ calcClearButton.addEventListener('click', () => {
 calcDelButton.addEventListener('click', () => {
     // console.log('delete')
     calcDisplay.textContent = calcDisplay.textContent.toString().slice(0, -1);
-    // if (!calcDisplay.textContent) {
-    //     calcDisplay.textContent = 0;
-    // }
+    if (!calcDisplay.textContent) {
+        calcDisplay.textContent = 0;
+    }
     calculator.dataset.previousKeyType = 'delete';
 
 })
