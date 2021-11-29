@@ -73,7 +73,7 @@ button.addEventListener('click', function (evt) {
 calcClearButton.addEventListener('click', () => {
     // console.log('clear key')
     calcDisplay.textContent = 0;
-    calculator.dataset.previousKeyType = 'clear'
+    calculator.dataset.previousKeyType = 'clear';
 })
 
 
@@ -81,12 +81,10 @@ calcClearButton.addEventListener('click', () => {
 calcDelButton.addEventListener('click', () => {
     // console.log('delete')
     calcDisplay.textContent = calcDisplay.textContent.toString().slice(0, -1);
-    if (!calcDisplay.textContent) {
-        calcDisplay.textContent = 0;
-    }
-
-    calculator.dataset.previousKeyType = 'delete'
-
+    // if (!calcDisplay.textContent) {
+    //     calcDisplay.textContent = 0;
+    // }
+    calculator.dataset.previousKeyType = 'delete';
 
 })
 
